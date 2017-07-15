@@ -2,9 +2,9 @@ CC := g++
 SRCDIR := src
 OBJDIR := bin/obj
 TARGET := bin/archmaker
-DESTDIR ?= /usr
-BINDIR := $(DESTDIR)/bin
-SHAREDIR := $(DESTDIR)/share
+DESTDIR ?= 
+BINDIR := $(DESTDIR)/usr/bin
+SHAREDIR := $(DESTDIR)/usr/share
  
 SRCEXT := cpp
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
