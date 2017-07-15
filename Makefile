@@ -34,7 +34,9 @@ install:
 	@echo " mkdir -p $(SHAREDIR)/archmaker/default-slideshow"; mkdir -p $(SHAREDIR)/archmaker/default-slideshow
 	@echo " cp $(SRCDIR)/standardslideshow/*.png $(SHAREDIR)/archmaker/default-slideshow"; cp $(SRCDIR)/standardslideshow/*.png $(SHAREDIR)/archmaker/default-slideshow
 	@echo " cp $(GLADEFILE) $(SHAREDIR)/archmaker/ui.glade"; cp $(GLADEFILE) $(SHAREDIR)/archmaker/ui.glade
+	@echo " mkdir -p $(SHAREDIR)/icons"; mkdir -p $(SHAREDIR)/icons
 	@echo " cp archmaker.svg $(SHAREDIR)/icons/"; cp archmaker.svg $(SHAREDIR)/icons/
+	@echo " mkdir -p $(SHAREDIR)/applications"; mkdir -p $(SHAREDIR)/applications
 	@echo " install -m 777 archmaker.desktop $(SHAREDIR)/applications/"; install -m 777 archmaker.desktop $(SHAREDIR)/applications/
 
 uninstall:
