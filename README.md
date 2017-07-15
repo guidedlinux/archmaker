@@ -38,7 +38,7 @@ This will install the .desktop file into /usr/share/applications/
 
 ### From the AUR
 
-~~To build the package from the AUR, it is recommended to use an AUR-Helper (e.g. yaourt, pacaur). Then you can run:~~
+To build the package from the AUR, it is recommended to use an AUR-Helper (e.g. yaourt, pacaur). Then you can run:
 ```sh
 yaourt -S archmaker
 ```
