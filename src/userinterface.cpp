@@ -416,6 +416,23 @@ void ArchmakerGui::on_launch_script_click() {
   Gtk::Widget *term = nullptr;
   refBuilder->get_widget("scriptterminal", term);
   // TODO: Run script in terminal
+  char *startterm[2] = {"/bin/sh", 0};
+  GError *err = NULL;
+  GPid child_pid;
+  if (vte_terminal_spawn_sync(VTE_TERMINAL(term->gobj()), VTE_PTY_DEFAULT,
+                                      NULL,
+                                      startterm,
+                                      {},
+                                      G_SPAWN_SEARCH_PATH,
+                                      NULL,
+                                      NULL,
+                                      &child_pid,
+                                      NULL,
+                                      &err)) {
+    vte_terminal_watch_child(VTE_TERMINAL(term->gobj()), child_pid);
+  } else {
+    std::cout << "Error while launching script in terminal: " << err->message << std::endl;
+  }
 }
 
 // Closes the terminal window.
