@@ -200,6 +200,7 @@ class ArchmakerGui {
     std::string final_aurpkgs;
     bool use_skelfolder;
     bool use_custom_slideshow;
+    std::string scriptpath;
 
     std::string final_script;
 };
