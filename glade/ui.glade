@@ -4086,7 +4086,7 @@ You just have to complete the following 7 steps:
             </child>
             <child>
               <object class="GtkButton" id="btn_run_script">
-                <property name="label" translatable="yes">Run (not implemented yet)</property>
+                <property name="label" translatable="yes">Run</property>
                 <property name="visible">True</property>
                 <property name="sensitive">False</property>
                 <property name="can_focus">True</property>
@@ -4149,6 +4149,9 @@ You just have to complete the following 7 steps:
         <property name="page_type">custom</property>
         <property name="has_padding">False</property>
       </packing>
+    </child>
+    <child>
+      <placeholder/>
     </child>
     <child>
       <placeholder/>
