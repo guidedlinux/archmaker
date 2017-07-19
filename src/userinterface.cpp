@@ -408,6 +408,11 @@ void ArchmakerGui::open_sl_folder_dialog() {
   } else { }
 }
 
+// Function that is called when the child of the terminal exits.
+void ArchmakerGui::on_child_exited(VteTerminal *vteterminal, gint status, gpointer user_data) {
+  gtk_widget_set_sensitive(GTK_WIDGET(user_data), TRUE);
+}
+
 // Opens a terminal window and launches the script within the VteTerminal.
 void ArchmakerGui::on_launch_script_click() {
   Gtk::Window *terminalwindow = nullptr;
@@ -415,7 +420,25 @@ void ArchmakerGui::on_launch_script_click() {
   terminalwindow->show_all();
   Gtk::Widget *term = nullptr;
   refBuilder->get_widget("scriptterminal", term);
-  // TODO: Run script in terminal
+  char *startterm[2] = {"/bin/sh", 0};
+  GError *err = NULL;
+  GPid child_pid;
+  if (vte_terminal_spawn_sync(VTE_TERMINAL(term->gobj()), VTE_PTY_DEFAULT,
+                                      scriptpath.c_str(),
+                                      startterm,
+                                      {},
+                                      G_SPAWN_SEARCH_PATH,
+                                      NULL,
+                                      NULL,
+                                      &child_pid,
+                                      NULL,
+                                      &err)) {
+    vte_terminal_watch_child(VTE_TERMINAL(term->gobj()), child_pid);
+    vte_terminal_feed_child(VTE_TERMINAL(term->gobj()), ("clear && ./generateiso.sh "+final_distversion+" "+final_distcodename+" && exit\n").c_str(), -1);
+    g_signal_connect(term->gobj(), "child-exited", G_CALLBACK(ArchmakerGui::on_child_exited), btn_close_terminal->gobj());
+  } else {
+    std::cout << "Error while launching script in terminal: " << err->message << std::endl;
+  }
 }
 
 // Closes the terminal window.
@@ -509,6 +532,7 @@ void ArchmakerGui::on_save_script_click() {
 
   int result = dialog.run();
   if (result == Gtk::RESPONSE_OK) {
+    scriptpath = dialog.get_filename();
     std::cout << dialog.get_filename() << std::endl;
     std::ofstream scriptfile;
     scriptfile.open((dialog.get_filename() + "/generateiso.sh"));

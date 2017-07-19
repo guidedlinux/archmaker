@@ -88,6 +88,14 @@ class ArchmakerGui {
       Opens a folder-dialog for selecting a slideshow-folder.
     */
     void open_sl_folder_dialog();
+    /** 
+      Function that is called when the child of the terminal exits.
+
+      @param vteterminal the object which received the signal
+      @param status the child's exit status
+      @param user_data user data set when the signal handler was connected
+    */
+    static void on_child_exited(VteTerminal *vteterminal, gint status, gpointer user_data);
     /**
       Opens a terminal window and launches the script within the VteTerminal.
     */
@@ -192,6 +200,7 @@ class ArchmakerGui {
     std::string final_aurpkgs;
     bool use_skelfolder;
     bool use_custom_slideshow;
+    std::string scriptpath;
 
     std::string final_script;
 };
