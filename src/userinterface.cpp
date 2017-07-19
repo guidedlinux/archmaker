@@ -408,6 +408,11 @@ void ArchmakerGui::open_sl_folder_dialog() {
   } else { }
 }
 
+// Function that is called when the child of the terminal exits.
+void ArchmakerGui::on_child_exited(VteTerminal *vteterminal, gint status, gpointer user_data) {
+  gtk_widget_set_sensitive(GTK_WIDGET(user_data), TRUE);
+}
+
 // Opens a terminal window and launches the script within the VteTerminal.
 void ArchmakerGui::on_launch_script_click() {
   Gtk::Window *terminalwindow = nullptr;
@@ -430,6 +435,7 @@ void ArchmakerGui::on_launch_script_click() {
                                       NULL,
                                       &err)) {
     vte_terminal_watch_child(VTE_TERMINAL(term->gobj()), child_pid);
+    g_signal_connect(term->gobj(), "child-exited", G_CALLBACK(ArchmakerGui::on_child_exited), btn_close_terminal->gobj());
   } else {
     std::cout << "Error while launching script in terminal: " << err->message << std::endl;
   }
