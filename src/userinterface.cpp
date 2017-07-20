@@ -134,6 +134,7 @@ void ArchmakerGui::ConnectSignals() {
   remaurbtn->signal_clicked().connect( sigc::mem_fun(*this, &ArchmakerGui::on_btn_remove_list_aur_click) );
   emptyradio->signal_toggled().connect( sigc::mem_fun(*this, &ArchmakerGui::on_rad_empty_toggle) );
   selectradio->signal_toggled().connect( sigc::mem_fun(*this, &ArchmakerGui::on_rad_select_toggle) );
+  useconfigsradio->signal_toggled().connect( sigc::mem_fun(*this, &ArchmakerGui::on_rad_use_configs_toggle) );
   folderdialogopen->signal_clicked().connect( sigc::mem_fun(*this, &ArchmakerGui::open_folder_dialog) );
   sl_emptyradio->signal_toggled().connect( sigc::mem_fun(*this, &ArchmakerGui::on_sl_rad_empty_toggle) );
   sl_selectradio->signal_toggled().connect( sigc::mem_fun(*this, &ArchmakerGui::on_sl_rad_select_toggle) );
@@ -340,6 +341,7 @@ void ArchmakerGui::on_rad_empty_toggle() {
   if (emptyradio->get_active()) {
     mainAssistant->set_page_complete(*mainAssistant->get_nth_page(3), true);
     usefolder = false;
+    usehomefolder = false;
   }
 }
 
@@ -352,6 +354,16 @@ void ArchmakerGui::on_rad_select_toggle() {
       mainAssistant->set_page_complete(*mainAssistant->get_nth_page(3), true);
     }
     usefolder = true;
+    usehomefolder = false;
+  }
+}
+
+// Allows the user to press Next and sets usehomefolder to true.
+void ArchmakerGui::on_rad_use_configs_toggle() {
+  if (useconfigsradio->get_active()) {
+    mainAssistant->set_page_complete(*mainAssistant->get_nth_page(3), true);
+    usefolder = false;
+    usehomefolder = true;
   }
 }
 

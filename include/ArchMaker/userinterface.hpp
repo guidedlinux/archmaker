@@ -77,6 +77,10 @@ class ArchmakerGui {
     */
     void open_folder_dialog();
     /**
+      Allows the user to press Next and sets usehomefolder to true.
+    */
+    void on_rad_use_configs_toggle();
+    /**
       Allows the user to press Next when the option to not use a custom slideshow is selected.
     */
     void on_sl_rad_empty_toggle();
@@ -186,6 +190,7 @@ class ArchmakerGui {
 
     std::string folderpath = "";
     bool usefolder = false;
+    bool usehomefolder = false;
 
     std::string sl_folderpath = "";
     bool sl_usefolder = false;
