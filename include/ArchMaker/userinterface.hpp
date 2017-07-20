@@ -166,6 +166,7 @@ class ArchmakerGui {
     Gtk::TextView *pkgstext = nullptr;
     Gtk::RadioButton *emptyradio = nullptr;
     Gtk::RadioButton *selectradio = nullptr;
+    Gtk::RadioButton *useconfigsradio = nullptr;
     Gtk::RadioButton *sl_emptyradio = nullptr;
     Gtk::RadioButton *sl_selectradio = nullptr;
     Gtk::Button *btn_close_assistant = nullptr;

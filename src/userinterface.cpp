@@ -42,6 +42,7 @@ ArchmakerGui::ArchmakerGui(Glib::RefPtr<Gtk::Application> app) : application(app
 
     refBuilder->get_widget("radiobutton1", emptyradio);
     refBuilder->get_widget("radiobutton2", selectradio);
+    refBuilder->get_widget("radio_use_own_home_folder", useconfigsradio);
     refBuilder->get_widget("btn_open_folder_dialog", folderdialogopen);
 
     refBuilder->get_widget("radiobutton3", sl_emptyradio);
