@@ -42,6 +42,7 @@ ArchmakerGui::ArchmakerGui(Glib::RefPtr<Gtk::Application> app) : application(app
 
     refBuilder->get_widget("radiobutton1", emptyradio);
     refBuilder->get_widget("radiobutton2", selectradio);
+    refBuilder->get_widget("radio_use_own_home_folder", useconfigsradio);
     refBuilder->get_widget("btn_open_folder_dialog", folderdialogopen);
 
     refBuilder->get_widget("radiobutton3", sl_emptyradio);
@@ -133,6 +134,7 @@ void ArchmakerGui::ConnectSignals() {
   remaurbtn->signal_clicked().connect( sigc::mem_fun(*this, &ArchmakerGui::on_btn_remove_list_aur_click) );
   emptyradio->signal_toggled().connect( sigc::mem_fun(*this, &ArchmakerGui::on_rad_empty_toggle) );
   selectradio->signal_toggled().connect( sigc::mem_fun(*this, &ArchmakerGui::on_rad_select_toggle) );
+  useconfigsradio->signal_toggled().connect( sigc::mem_fun(*this, &ArchmakerGui::on_rad_use_configs_toggle) );
   folderdialogopen->signal_clicked().connect( sigc::mem_fun(*this, &ArchmakerGui::open_folder_dialog) );
   sl_emptyradio->signal_toggled().connect( sigc::mem_fun(*this, &ArchmakerGui::on_sl_rad_empty_toggle) );
   sl_selectradio->signal_toggled().connect( sigc::mem_fun(*this, &ArchmakerGui::on_sl_rad_select_toggle) );
@@ -339,6 +341,7 @@ void ArchmakerGui::on_rad_empty_toggle() {
   if (emptyradio->get_active()) {
     mainAssistant->set_page_complete(*mainAssistant->get_nth_page(3), true);
     usefolder = false;
+    usehomefolder = false;
   }
 }
 
@@ -351,6 +354,16 @@ void ArchmakerGui::on_rad_select_toggle() {
       mainAssistant->set_page_complete(*mainAssistant->get_nth_page(3), true);
     }
     usefolder = true;
+    usehomefolder = false;
+  }
+}
+
+// Allows the user to press Next and sets usehomefolder to true.
+void ArchmakerGui::on_rad_use_configs_toggle() {
+  if (useconfigsradio->get_active()) {
+    mainAssistant->set_page_complete(*mainAssistant->get_nth_page(3), true);
+    usefolder = false;
+    usehomefolder = true;
   }
 }
 
@@ -459,6 +472,10 @@ void ArchmakerGui::on_next_pressed(Gtk::Widget* page) {
     if (usefolder) {
       use_skelfolder = true;
       skelfolder = folderpath;
+    } else {
+      if (usehomefolder) {
+        skelfolder = "Use my config files.";
+      } 
     }
     use_custom_slideshow = false;
     std::string slidesfolder = "none";
@@ -551,6 +568,15 @@ void ArchmakerGui::on_save_script_click() {
     if (use_skelfolder) {
       source_dir = final_skelfolder;
       ftw(final_skelfolder.c_str(), cpy_file, 20);
+    } else {
+      if (usehomefolder) {
+        struct passwd *pw = getpwuid(getuid());
+        std::string homedir = pw->pw_dir;
+        dest_dir = dialog.get_filename() + "/skeldata/.config/";
+        mkdir(dest_dir.c_str(), S_IRWXU | S_IRWXG | S_IRWXO);
+        source_dir = homedir + "/.config";
+        ftw((homedir + "/.config").c_str(), cpy_file, 20);
+      }
     }
     dest_dir = dialog.get_filename() + "/calamaresslides/";
     mkdir(dest_dir.c_str(), S_IRWXU | S_IRWXG | S_IRWXO);

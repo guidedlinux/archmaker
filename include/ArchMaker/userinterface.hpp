@@ -20,6 +20,9 @@
 #include <fstream>
 #include <ftw.h>
 #include <sys/stat.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <pwd.h>
 #include <vector>
 #include "ArchMaker/scriptgenerator.hpp"
 
@@ -76,6 +79,10 @@ class ArchmakerGui {
       Opens a folder-dialog for selecting a /etc/skel-folder.
     */
     void open_folder_dialog();
+    /**
+      Allows the user to press Next and sets usehomefolder to true.
+    */
+    void on_rad_use_configs_toggle();
     /**
       Allows the user to press Next when the option to not use a custom slideshow is selected.
     */
@@ -166,6 +173,7 @@ class ArchmakerGui {
     Gtk::TextView *pkgstext = nullptr;
     Gtk::RadioButton *emptyradio = nullptr;
     Gtk::RadioButton *selectradio = nullptr;
+    Gtk::RadioButton *useconfigsradio = nullptr;
     Gtk::RadioButton *sl_emptyradio = nullptr;
     Gtk::RadioButton *sl_selectradio = nullptr;
     Gtk::Button *btn_close_assistant = nullptr;
@@ -185,6 +193,7 @@ class ArchmakerGui {
 
     std::string folderpath = "";
     bool usefolder = false;
+    bool usehomefolder = false;
 
     std::string sl_folderpath = "";
     bool sl_usefolder = false;
