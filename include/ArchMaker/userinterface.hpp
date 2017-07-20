@@ -20,6 +20,9 @@
 #include <fstream>
 #include <ftw.h>
 #include <sys/stat.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <pwd.h>
 #include <vector>
 #include "ArchMaker/scriptgenerator.hpp"
 

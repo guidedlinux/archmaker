@@ -472,6 +472,10 @@ void ArchmakerGui::on_next_pressed(Gtk::Widget* page) {
     if (usefolder) {
       use_skelfolder = true;
       skelfolder = folderpath;
+    } else {
+      if (usehomefolder) {
+        skelfolder = "Use my config files.";
+      } 
     }
     use_custom_slideshow = false;
     std::string slidesfolder = "none";
@@ -564,6 +568,15 @@ void ArchmakerGui::on_save_script_click() {
     if (use_skelfolder) {
       source_dir = final_skelfolder;
       ftw(final_skelfolder.c_str(), cpy_file, 20);
+    } else {
+      if (usehomefolder) {
+        struct passwd *pw = getpwuid(getuid());
+        std::string homedir = pw->pw_dir;
+        dest_dir = dialog.get_filename() + "/skeldata/.config/";
+        mkdir(dest_dir.c_str(), S_IRWXU | S_IRWXG | S_IRWXO);
+        source_dir = homedir + "/.config";
+        ftw((homedir + "/.config").c_str(), cpy_file, 20);
+      }
     }
     dest_dir = dialog.get_filename() + "/calamaresslides/";
     mkdir(dest_dir.c_str(), S_IRWXU | S_IRWXG | S_IRWXO);
