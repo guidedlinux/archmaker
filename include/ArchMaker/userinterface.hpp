@@ -188,6 +188,7 @@ class ArchmakerGui {
     Gtk::Button *btn_save_script = nullptr;
     Gtk::Button *btn_launchscript = nullptr;
     Gtk::Button *btn_close_terminal = nullptr;
+    Gtk::Button *btn_go_back = nullptr;
 
     std::string installedpackages = "";
 

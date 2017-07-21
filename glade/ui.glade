@@ -565,6 +565,11 @@
     <property name="stock">gtk-quit</property>
     <property name="icon_size">5</property>
   </object>
+  <object class="GtkImage" id="image8">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="stock">gtk-go-back</property>
+  </object>
   <object class="GtkAssistant" id="mainAssistant">
     <property name="can_focus">False</property>
     <property name="window_position">center</property>
@@ -4097,6 +4102,55 @@ You just have to complete the following 7 steps:
               </packing>
             </child>
             <child>
+              <object class="GtkButton" id="btn_go_back">
+                <property name="label" translatable="yes">Back</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="image">image8</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="padding">5</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="padding">5</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
               <object class="GtkButton" id="btn_save_script">
                 <property name="label" translatable="yes">Save</property>
                 <property name="visible">True</property>
@@ -4157,7 +4211,8 @@ You just have to complete the following 7 steps:
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="position">2</property>
+            <property name="padding">5</property>
+            <property name="position">3</property>
           </packing>
         </child>
         <child>
@@ -4168,7 +4223,7 @@ You just have to complete the following 7 steps:
           <packing>
             <property name="expand">True</property>
             <property name="fill">True</property>
-            <property name="position">3</property>
+            <property name="position">4</property>
           </packing>
         </child>
       </object>
@@ -4176,6 +4231,15 @@ You just have to complete the following 7 steps:
         <property name="page_type">custom</property>
         <property name="has_padding">False</property>
       </packing>
+    </child>
+    <child>
+      <placeholder/>
+    </child>
+    <child>
+      <placeholder/>
+    </child>
+    <child>
+      <placeholder/>
     </child>
     <child>
       <placeholder/>

@@ -52,6 +52,7 @@ ArchmakerGui::ArchmakerGui(Glib::RefPtr<Gtk::Application> app) : application(app
     refBuilder->get_widget("btn_save_script", btn_save_script);
     refBuilder->get_widget("btn_run_script", btn_launchscript);
     refBuilder->get_widget("btn_close_terminal", btn_close_terminal);
+    refBuilder->get_widget("btn_go_back", btn_go_back);
 
     refBuilder->get_widget("list_aur", aurlist);
 	}
