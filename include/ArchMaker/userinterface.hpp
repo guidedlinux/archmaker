@@ -117,6 +117,10 @@ class ArchmakerGui {
       @param page The Gtk-Assistant-Page.
     */
     void on_next_pressed(Gtk::Widget* page);
+    /** 
+      Goes back a page.
+    */
+    void on_btn_go_back_click();
     /**
       Shows a file-dialog and saves the script, the selected packages, the /etc/skel-folder and the slideshow-folder to the selected path.
     */
@@ -188,6 +192,7 @@ class ArchmakerGui {
     Gtk::Button *btn_save_script = nullptr;
     Gtk::Button *btn_launchscript = nullptr;
     Gtk::Button *btn_close_terminal = nullptr;
+    Gtk::Button *btn_go_back = nullptr;
 
     std::string installedpackages = "";
 

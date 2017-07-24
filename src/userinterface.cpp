@@ -52,6 +52,7 @@ ArchmakerGui::ArchmakerGui(Glib::RefPtr<Gtk::Application> app) : application(app
     refBuilder->get_widget("btn_save_script", btn_save_script);
     refBuilder->get_widget("btn_run_script", btn_launchscript);
     refBuilder->get_widget("btn_close_terminal", btn_close_terminal);
+    refBuilder->get_widget("btn_go_back", btn_go_back);
 
     refBuilder->get_widget("list_aur", aurlist);
 	}
@@ -140,6 +141,7 @@ void ArchmakerGui::ConnectSignals() {
   sl_selectradio->signal_toggled().connect( sigc::mem_fun(*this, &ArchmakerGui::on_sl_rad_select_toggle) );
   sl_folderdialogopen->signal_clicked().connect( sigc::mem_fun(*this, &ArchmakerGui::open_sl_folder_dialog) );
   btn_save_script->signal_clicked().connect( sigc::mem_fun(*this, &ArchmakerGui::on_save_script_click) );
+  btn_go_back->signal_clicked().connect( sigc::mem_fun(*this, &ArchmakerGui::on_btn_go_back_click) );
   btn_launchscript->signal_clicked().connect( sigc::mem_fun(*this, &ArchmakerGui::on_launch_script_click) );
   btn_close_terminal->signal_clicked().connect( sigc::mem_fun(*this, &ArchmakerGui::close_terminal) );
 }
@@ -535,6 +537,13 @@ void ArchmakerGui::on_next_pressed(Gtk::Widget* page) {
     scriptgenerator.set_displaymanager(final_displaymanager);
     final_script = scriptgenerator.GenerateScript();
   }
+}
+
+// Goes back a page.
+void ArchmakerGui::on_btn_go_back_click() {
+  int currentpage = mainAssistant->get_current_page();
+  currentpage--;
+  mainAssistant->set_current_page(currentpage);
 }
 
 // Shows a file-dialog and saves the script, the selected packages, the /etc/skel-folder and the slideshow-folder to the selected path.
