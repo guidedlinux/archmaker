@@ -60,22 +60,6 @@ ArchmakerGui::ArchmakerGui(Glib::RefPtr<Gtk::Application> app) : application(app
 ArchmakerGui::~ArchmakerGui() {
 }
 
-// Returns the contents of a file as a string.
-std::string ArchmakerGui::get_file_contents(std::string fileName) {
-  std::FILE *fp = std::fopen(fileName.c_str(), "rb");
-  if (fp)
-  {
-    std::string contents;
-    std::fseek(fp, 0, SEEK_END);
-    contents.resize(std::ftell(fp));
-    std::rewind(fp);
-    std::fread(&contents[0], 1, contents.size(), fp);
-    std::fclose(fp);
-    return(contents);
-  }
-  throw(errno);
-}
-
 /**
   Callback for ftw that either copies a file or creates a directory.
 

@@ -129,13 +129,6 @@ class ArchmakerGui {
     void on_save_script_click();
   private:
     /**
-      Returns the contents of a file as a string.
-
-      @param fileName The path to the file.
-      @return The contents of the file as a string.
-    */
-    std::string get_file_contents(std::string fileName);
-    /**
       Checks if a Radiobutton is checked or not.
 
       @param widget The name of the radiobutton.
