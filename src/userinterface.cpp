@@ -150,7 +150,6 @@ void ArchmakerGui::checkpkgradiobtn(std::string widget, std::string packagename)
   if (currentbtn->get_active()) {
     installedpackages = installedpackages + packagename;
   }
-  delete currentbtn;
 }
 // Adds a package to the list and starts a service if the radiobutton is checked.
 void ArchmakerGui::checkpkgradiobtn_dm(std::string widget, std::string packagename, std::string servicename) {
@@ -160,7 +159,6 @@ void ArchmakerGui::checkpkgradiobtn_dm(std::string widget, std::string packagena
     installedpackages = installedpackages + packagename;
     final_displaymanager = servicename;
   }
-  delete currentbtn;
 }
 // Adds a package to the list if the checkbutton is checked.
 void ArchmakerGui::checkpkgcheckbtn(std::string widget, std::string packagename) {
@@ -169,7 +167,6 @@ void ArchmakerGui::checkpkgcheckbtn(std::string widget, std::string packagename)
   if (currentbtn->get_active()) {
     installedpackages = installedpackages + packagename;
   }
-  delete currentbtn;
 }
 // Gets the package names and services out of the standard-package-selector.
 void ArchmakerGui::pkgsfrombuttons() {
