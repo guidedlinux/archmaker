@@ -248,9 +248,30 @@ void ArchmakerGui::on_btn_edit_packages_click() {
 
 // Gets the currently installed packages.
 void ArchmakerGui::on_btn_use_packages_click() {
-  // TODO: Use libalpm instead of a system()-call.
-  system("pacman -Qq > /tmp/archmakerpkgs");
-  installedpackages = get_file_contents("/tmp/archmakerpkgs");
+  installedpackages = "";
+  alpm_handle_t *handle = NULL;
+  alpm_db_t *db = NULL;
+  alpm_list_t *i;
+  alpm_errno_t err;
+
+  handle = alpm_initialize("/", "/var/lib/pacman", &err);
+  if (!handle) {
+    std::cerr << "Error: Cannot initialize ALPM!" << std::endl;
+		return;
+  }
+
+  db = alpm_get_localdb(handle);
+  if (db == NULL) {
+    std::cerr << "Error: Could not register 'local' database" << std::endl;
+		return;
+  }
+
+  alpm_list_t *list = alpm_db_get_pkgcache(db);
+ 
+  for(i = list; i; i = alpm_list_next(i)) {
+    const char *pkgname = alpm_pkg_get_name(static_cast<alpm_pkg_t*>(i->data));
+    installedpackages = installedpackages + pkgname + "\n";
+  }
 }
 
 // Saves the manually edited packages and closes the dialog.

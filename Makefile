@@ -11,7 +11,7 @@ SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(OBJDIR)/%,$(SOURCES:.$(SRCEXT)=.o))
 CFLAGS := -g `pkg-config --cflags gtkmm-3.0 vte-2.91`
 CFLAGS += -I include
-LIB := -pthread `pkg-config --libs gtkmm-3.0 vte-2.91`
+LIB := -pthread -lalpm `pkg-config --libs gtkmm-3.0 vte-2.91`
 GLADEFILE := glade/ui.glade
 
 $(TARGET): $(OBJECTS)

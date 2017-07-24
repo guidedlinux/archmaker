@@ -24,6 +24,8 @@
 #include <sys/types.h>
 #include <pwd.h>
 #include <vector>
+#include <alpm.h>
+#include <alpm_list.h>
 #include "ArchMaker/scriptgenerator.hpp"
 
 class ArchmakerGui {
