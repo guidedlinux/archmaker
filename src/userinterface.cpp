@@ -532,7 +532,9 @@ void ArchmakerGui::on_next_pressed(Gtk::Widget* page) {
     final_distversion = distversion->get_text();
     final_distcodename = distcodename->get_text();
     final_slidesfolder = slidesfolder;
-    final_aurpkgs = aurtext;
+    if (aurtext != "none\n") {
+      final_aurpkgs = aurtext;
+    }
     pkgsfrombuttons();
   } else if (mainAssistant->get_current_page() == 7) {
     // Generates the final script
