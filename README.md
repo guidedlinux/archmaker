@@ -22,7 +22,7 @@ You just have to select the programs you want to install, an /etc/skel-folder, e
 
 To get the dependencies:
 ```sh
-sudo pacman -S base-devel git vte gtk3 gtkmm3 archiso
+sudo pacman -S base-devel git vte3 gtk3 gtkmm3 archiso
 ```
 Now you need to clone the Github-Repository:
 ```sh
