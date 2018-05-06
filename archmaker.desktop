@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=ArchMaker
+Comment=Quickly and easily create your own arch-based GNU/Linux-distribution!
+Exec=/usr/bin/archmaker
+Icon=archmaker
+Terminal=false
+Type=Application

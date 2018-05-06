@@ -1,0 +1,76 @@
+<RCC>
+    <qresource prefix="/qml">
+        <file alias="main.qml">res/qml/main.qml</file>
+        <file alias="ScriptDialogForm.ui.qml">res/qml/ScriptDialogForm.ui.qml</file>
+        <file alias="ScriptDialog.qml">res/qml/ScriptDialog.qml</file>
+        <file alias="ProgramsGrid.qml">res/qml/ProgramsGrid.qml</file>
+        <file alias="Page7Form.ui.qml">res/qml/Page7Form.ui.qml</file>
+        <file alias="Page7.qml">res/qml/Page7.qml</file>
+        <file alias="Page6Form.ui.qml">res/qml/Page6Form.ui.qml</file>
+        <file alias="Page6.qml">res/qml/Page6.qml</file>
+        <file alias="Page5Form.ui.qml">res/qml/Page5Form.ui.qml</file>
+        <file alias="Page5.qml">res/qml/Page5.qml</file>
+        <file alias="Page4Form.ui.qml">res/qml/Page4Form.ui.qml</file>
+        <file alias="Page4.qml">res/qml/Page4.qml</file>
+        <file alias="Page3Form.ui.qml">res/qml/Page3Form.ui.qml</file>
+        <file alias="Page3.qml">res/qml/Page3.qml</file>
+        <file alias="Page2Form.ui.qml">res/qml/Page2Form.ui.qml</file>
+        <file alias="Page2.qml">res/qml/Page2.qml</file>
+        <file alias="Page1Form.ui.qml">res/qml/Page1Form.ui.qml</file>
+        <file alias="Page1.qml">res/qml/Page1.qml</file>
+        <file alias="AURDialogForm.ui.qml">res/qml/AURDialogForm.ui.qml</file>
+        <file alias="AURDialog.qml">res/qml/AURDialog.qml</file>
+    </qresource>
+    <qresource prefix="/icons">
+        <file alias="other/virtualbox.png">res/icons/other/virtualbox.png</file>
+        <file alias="other/pavucontrol.png">res/icons/other/pavucontrol.png</file>
+        <file alias="other/cups.png">res/icons/other/cups.png</file>
+        <file alias="office/okular.png">res/icons/office/okular.png</file>
+        <file alias="office/libreoffice.png">res/icons/office/libreoffice.png</file>
+        <file alias="office/calligra.png">res/icons/office/calligra.png</file>
+        <file alias="office/abiword.png">res/icons/office/abiword.png</file>
+        <file alias="multimedia/vlc.png">res/icons/multimedia/vlc.png</file>
+        <file alias="multimedia/totem.png">res/icons/multimedia/totem.png</file>
+        <file alias="multimedia/rhythmbox.png">res/icons/multimedia/rhythmbox.png</file>
+        <file alias="multimedia/kdenlive.png">res/icons/multimedia/kdenlive.png</file>
+        <file alias="multimedia/clementine.png">res/icons/multimedia/clementine.png</file>
+        <file alias="multimedia/brasero.png">res/icons/multimedia/brasero.png</file>
+        <file alias="multimedia/audacity.png">res/icons/multimedia/audacity.png</file>
+        <file alias="multimedia/audacious.png">res/icons/multimedia/audacious.png</file>
+        <file alias="multimedia/amarok.png">res/icons/multimedia/amarok.png</file>
+        <file alias="login/login.png">res/icons/login/login.png</file>
+        <file alias="internet/transmission.png">res/icons/internet/transmission.png</file>
+        <file alias="internet/thunderbird.png">res/icons/internet/thunderbird.png</file>
+        <file alias="internet/opera.png">res/icons/internet/opera.png</file>
+        <file alias="internet/midori.png">res/icons/internet/midori.png</file>
+        <file alias="internet/gnome-web.png">res/icons/internet/gnome-web.png</file>
+        <file alias="internet/firefox.png">res/icons/internet/firefox.png</file>
+        <file alias="internet/filezilla.png">res/icons/internet/filezilla.png</file>
+        <file alias="internet/chromium.png">res/icons/internet/chromium.png</file>
+        <file alias="graphics/inkscape.png">res/icons/graphics/inkscape.png</file>
+        <file alias="graphics/gimp.png">res/icons/graphics/gimp.png</file>
+        <file alias="graphics/eog.png">res/icons/graphics/eog.png</file>
+        <file alias="graphics/darktable.png">res/icons/graphics/darktable.png</file>
+        <file alias="desktop/xfce.png">res/icons/desktop/xfce.png</file>
+        <file alias="desktop/openbox.png">res/icons/desktop/openbox.png</file>
+        <file alias="desktop/mate.png">res/icons/desktop/mate.png</file>
+        <file alias="desktop/lxde.png">res/icons/desktop/lxde.png</file>
+        <file alias="desktop/kde.png">res/icons/desktop/kde.png</file>
+        <file alias="desktop/gnome.png">res/icons/desktop/gnome.png</file>
+        <file alias="desktop/cinnamon.png">res/icons/desktop/cinnamon.png</file>
+        <file alias="desktop/budgie.png">res/icons/desktop/budgie.png</file>
+        <file alias="accessories/xfce4-terminal.png">res/icons/accessories/xfce4-terminal.png</file>
+        <file alias="accessories/texteditor.png">res/icons/accessories/texteditor.png</file>
+        <file alias="accessories/leafpad.png">res/icons/accessories/leafpad.png</file>
+        <file alias="accessories/galculator.png">res/icons/accessories/galculator.png</file>
+        <file alias="accessories/filemanager.png">res/icons/accessories/filemanager.png</file>
+        <file alias="accessories/ark.png">res/icons/accessories/ark.png</file>
+    </qresource>
+    <qresource prefix="/script">
+        <file alias="standardprograms">res/script/standardprograms</file>
+        <file alias="scripttemplate.sh">res/script/scripttemplate.sh</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>qtquickcontrols2.conf</file>
+    </qresource>
+</RCC>
