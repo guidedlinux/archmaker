@@ -20,6 +20,8 @@
         <file alias="Page1.qml">res/qml/Page1.qml</file>
         <file alias="AURDialogForm.ui.qml">res/qml/AURDialogForm.ui.qml</file>
         <file alias="AURDialog.qml">res/qml/AURDialog.qml</file>
+        <file alias="PackagesDialog.qml">res/qml/PackagesDialog.qml</file>
+        <file alias="PackagesDialogForm.ui.qml">res/qml/PackagesDialogForm.ui.qml</file>
     </qresource>
     <qresource prefix="/icons">
         <file alias="other/virtualbox.png">res/icons/other/virtualbox.png</file>

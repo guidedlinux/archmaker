@@ -58,10 +58,7 @@ ApplicationWindow {
             if (swipeView.currentIndex == 6) {
                 var packagestoinstall = [];
 
-                var programsrequest = new XMLHttpRequest();
-                programsrequest.open("GET", "/script/standardprograms", false);
-                programsrequest.send();
-                packagestoinstall.push(programsrequest.responseText);
+                packagestoinstall.push(pg2.packagesDialog.programstextarea.text + "\n");
 
                 packagestoinstall = appendpackages(pg2.modelLogin, packagestoinstall);
                 packagestoinstall = appendpackages(pg2.modelDesktop, packagestoinstall);

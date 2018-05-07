@@ -8,4 +8,10 @@ Page2Form {
 
         swipeView.currentItem.visible = true;
     }
+
+    editmanuallybtn {
+        onClicked: {
+            packagesDialog.open();
+        }
+    }
 }

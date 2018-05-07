@@ -13,6 +13,8 @@ Item {
     property alias modelAccessories : modelAccessories
     property alias modelOffice : modelOffice
     property alias modelOther : modelOther
+    property alias editmanuallybtn : editmanuallybtn
+    property alias packagesDialog : packagesDialog
 
     ListModel {
         id: modelLogin
@@ -377,7 +379,7 @@ Item {
                 font.family: "Verdana"
             }
             Button {
-                id: removepkgbtn
+                id: editmanuallybtn
                 Layout.fillWidth: true
                 Layout.minimumWidth: 60
                 Layout.minimumHeight: 45
@@ -574,5 +576,9 @@ Item {
                 }
             }
         }
+    }
+
+    PackagesDialog {
+        id: packagesDialog
     }
 }
