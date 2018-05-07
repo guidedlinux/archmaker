@@ -15,6 +15,7 @@ Item {
     property alias modelOther : modelOther
     property alias editmanuallybtn : editmanuallybtn
     property alias packagesDialog : packagesDialog
+    property alias usepkgsbtn : usepkgsbtn
 
     ListModel {
         id: modelLogin
@@ -369,7 +370,7 @@ Item {
             Layout.alignment: Qt.AlignCenter
             spacing: 10
             Button {
-                id: addpkgbtn
+                id: usepkgsbtn
                 Layout.fillWidth: true
                 Layout.minimumWidth: 60
                 Layout.minimumHeight: 45

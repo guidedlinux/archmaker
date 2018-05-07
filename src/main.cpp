@@ -3,10 +3,12 @@
 #include <QQmlContext>
 #include "include/fileoperations.h"
 #include "include/terminallauncher.h"
+#include "include/alpmutils.h"
 
 int main(int argc, char *argv[]) {
     FileOperations fileOperations;
     TerminalLauncher terminalLauncher;
+    alpmUtils _alpmUtils;
 
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QGuiApplication app(argc, argv);
@@ -16,6 +18,7 @@ int main(int argc, char *argv[]) {
 
     engine.rootContext()->setContextProperty("fileOperations", &fileOperations);
     engine.rootContext()->setContextProperty("terminalLauncher", &terminalLauncher);
+    engine.rootContext()->setContextProperty("alpmUtils", &_alpmUtils);
 
     if (engine.rootObjects().isEmpty())
         return -1;

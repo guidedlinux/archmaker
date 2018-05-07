@@ -45,8 +45,11 @@ INSTALLS += desktopfile
 
 HEADERS += \
     include/fileoperations.h \
-    include/terminallauncher.h
+    include/terminallauncher.h \
+    include/alpmutils.h
 
 DISTFILES += \
     standardprograms
 
+
+unix:!macx: LIBS += -lalpm

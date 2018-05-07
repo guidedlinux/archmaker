@@ -14,4 +14,10 @@ Page2Form {
             packagesDialog.open();
         }
     }
+
+    usepkgsbtn {
+        onClicked: {
+            packagesDialog.programstextarea.text = alpmUtils.getpkgs();
+        }
+    }
 }
