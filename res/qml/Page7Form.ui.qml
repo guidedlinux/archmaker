@@ -22,7 +22,7 @@ Item {
         Label {
             id: headinglabel
             Layout.alignment: Qt.AlignCenter
-            text: "Summary"
+            text: qsTr("Summary")
             font.capitalization: Font.MixedCase
             font.weight: Font.Medium
             font.wordSpacing: 4
@@ -48,7 +48,7 @@ Item {
 
         Button {
             id: generatebtn
-            text: "Generate"
+            text: qsTr("Generate")
             font.pointSize: 14
             Layout.minimumWidth: 140
             Layout.maximumWidth: 140

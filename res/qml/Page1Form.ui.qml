@@ -17,7 +17,7 @@ Item {
         spacing: 20
         Label {
             Layout.alignment: Qt.AlignCenter
-            text: "Welcome to ArchMaker!"
+            text: qsTr("Welcome to ArchMaker!")
             font.capitalization: Font.MixedCase
             font.weight: Font.Medium
             font.wordSpacing: 4
@@ -29,7 +29,7 @@ Item {
         Label {
             width: 357
             Layout.alignment: Qt.AlignCenter
-            text: "This assistant will guide you step-by-step through the creation of your custom, arch-based GNU/Linux-distribution.
+            text: qsTr("This assistant will guide you step-by-step through the creation of your custom, arch-based GNU/Linux-distribution.
 
 You just have to complete the following 7 steps:
 1. Programs that need to be installed (normal repositories)
@@ -38,7 +38,7 @@ You just have to complete the following 7 steps:
 4. lsb-release information
 5. Slideshow for calamares (the installer)
 6. Summary
-7. Saving the final script"
+7. Saving the final script")
             Layout.fillWidth: true
             font.capitalization: Font.MixedCase
             font.weight: Font.Medium

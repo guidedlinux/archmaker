@@ -30,7 +30,7 @@ Item {
         Label {
             width: 357
             Layout.alignment: Qt.AlignCenter
-            text: "Which programs would you like to install?"
+            text: qsTr("Which programs would you like to install?")
             font.capitalization: Font.MixedCase
             Layout.fillWidth: true
             font.weight: Font.Medium

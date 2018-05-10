@@ -24,7 +24,7 @@ Page3Form {
                                });
                 aurdialog.searchresults.clear();
                 aurdialog.searchresults.append({
-                                                    name: "No search results.",
+                                                    name: qsTr("No search results."),
                                                     pkgid: -1,
                                                     url: "none",
                                                     description: ""

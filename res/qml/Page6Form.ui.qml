@@ -24,7 +24,7 @@ Item {
         spacing: 20
         Label {
             Layout.alignment: Qt.AlignCenter
-            text: "Slideshow"
+            text: qsTr("Slideshow")
             font.capitalization: Font.MixedCase
             font.weight: Font.Medium
             font.wordSpacing: 4
@@ -36,7 +36,7 @@ Item {
         Label {
             width: 357
             Layout.alignment: Qt.AlignCenter
-            text: "The slideshow will be shown during the installation of the distro. The folder should contain the images as PNG-files with a recommended size of 800x400px."
+            text: qsTr("The slideshow will be shown during the installation of the distro. The folder should contain the images as PNG-files with a recommended size of 800x400px.")
             Layout.fillWidth: true
             font.capitalization: Font.MixedCase
             font.weight: Font.Medium
@@ -55,7 +55,7 @@ Item {
 
             RadioButton {
                 id: radiodefault
-                text: "Use the default-slideshow."
+                text: qsTr("Use the default-slideshow.")
                 Layout.fillWidth: true
                 font.capitalization: Font.MixedCase
                 font.weight: Font.Medium
@@ -71,7 +71,7 @@ Item {
 
             RadioButton {
                 id: radiocustom
-                text: "Use a custom slideshow."
+                text: qsTr("Use a custom slideshow.")
                 Layout.fillWidth: true
                 font.capitalization: Font.MixedCase
                 font.weight: Font.Medium
@@ -85,7 +85,7 @@ Item {
 
                 Label {
                     id: slideshowselection
-                    text: "No folder selected."
+                    text: qsTr("No folder selected.")
                     horizontalAlignment: Text.AlignHCenter
                     Layout.fillWidth: true
                     width: parent.width
@@ -96,7 +96,7 @@ Item {
                 }
                 Button {
                     id: selectslideshowbtn
-                    text: "Pick a folder."
+                    text: qsTr("Pick a folder.")
                     Layout.fillWidth: true
                     Layout.minimumWidth: 250
                     Layout.minimumHeight: 45
@@ -111,7 +111,7 @@ Item {
     FileDialog {
         selectFolder: true
         id: slideshowopendialog
-        title: "Please select a slideshow-folder"
+        title: qsTr("Please select a slideshow-folder")
         folder: shortcuts.home
     }
 }

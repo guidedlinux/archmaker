@@ -375,7 +375,7 @@ Item {
                 Layout.minimumWidth: 60
                 Layout.minimumHeight: 45
                 Layout.maximumHeight: 45
-                text: "Select currently installed programs"
+                text: qsTr("Select currently installed programs")
                 font.pointSize: 10
                 font.family: "Verdana"
             }
@@ -385,7 +385,7 @@ Item {
                 Layout.minimumWidth: 60
                 Layout.minimumHeight: 45
                 Layout.maximumHeight: 45
-                text: "Edit manually"
+                text: qsTr("Edit manually")
                 font.pointSize: 10
                 font.family: "Verdana"
             }
@@ -397,28 +397,28 @@ Item {
             anchors.fill: parent
             currentIndex: swipeView.currentIndex
             TabButton {
-                text: "Login"
+                text: qsTr("Login")
             }
             TabButton {
-                text: "Desktop"
+                text: qsTr("Desktop")
             }
             TabButton {
-                text: "Internet"
+                text: qsTr("Internet")
             }
             TabButton {
-                text: "Multimedia"
+                text: qsTr("Multimedia")
             }
             TabButton {
-                text: "Graphics"
+                text: qsTr("Graphics")
             }
             TabButton {
-                text: "Accessories"
+                text: qsTr("Accessories")
             }
             TabButton {
-                text: "Office"
+                text: qsTr("Office")
             }
             TabButton {
-                text: "Other"
+                text: qsTr("Other")
             }
         }
 

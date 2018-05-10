@@ -20,7 +20,7 @@ ApplicationWindow {
     visible: true
     width: 800
     height: 480
-    title: qsTr("ArchMaker")
+    title: "ArchMaker"
 
     SwipeView {
         id: swipeView
@@ -89,14 +89,14 @@ ApplicationWindow {
                 var skelfoldertext = "";
                 var skelfolderpath = "none";
 
-                if (pg4.radioempty.checked) skelfolderoption = 0; skelfoldertext = "Empty /etc/skel-folder";
-                if (pg4.radiohome.checked) skelfolderoption = 2; skelfoldertext = "Config from ~ as /etc/skel";
+                if (pg4.radioempty.checked) skelfolderoption = 0; skelfoldertext = qsTr("Empty /etc/skel-folder");
+                if (pg4.radiohome.checked) skelfolderoption = 2; skelfoldertext = qsTr("Config from ~ as /etc/skel");
                 if (pg4.radiocustom.checked) {
-                    if (pg4.skelfolderselection.text !== "No folder selected.") {
+                    if (pg4.skelfolderselection.text !== qsTr("No folder selected.")) {
                         skelfolderpath = pg4.skelfolderselection.text;
-                        skelfolderoption = 1; skelfoldertext = "Custom /etc/skel-folder: " + skelfolderpath;
+                        skelfolderoption = 1; skelfoldertext = qsTr("Custom /etc/skel-folder: ") + skelfolderpath;
                     } else {
-                        skelfolderoption = 0; skelfoldertext = "Empty /etc/skel-folder";
+                        skelfolderoption = 0; skelfoldertext = qsTr("Empty /etc/skel-folder");
                     }
                 }
 
@@ -109,13 +109,13 @@ ApplicationWindow {
                 var customslideshowtext = "";
                 var slideshowpath = "none";
 
-                if (pg6.radiodefault.checked) customslideshow = false; customslideshowtext = "Use default slideshow.";
+                if (pg6.radiodefault.checked) customslideshow = false; customslideshowtext = qsTr("Use default slideshow.");
                 if (pg6.radiocustom.checked) {
-                    if (pg6.slideshowselection.text !== "No folder selected.") {
+                    if (pg6.slideshowselection.text !== qsTr("No folder selected.")) {
                         slideshowpath = pg6.slideshowselection.text;
-                        customslideshow = true; customslideshowtext = "Use custom slideshow: " + slideshowpath;
+                        customslideshow = true; customslideshowtext = qsTr("Use custom slideshow: ") + slideshowpath;
                     } else {
-                        customslideshow = false; customslideshowtext = "Use default slideshow.";
+                        customslideshow = false; customslideshowtext = qsTr("Use default slideshow.");
                     }
                 }
 

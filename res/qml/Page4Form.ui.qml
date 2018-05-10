@@ -25,7 +25,7 @@ Item {
         spacing: 20
         Label {
             Layout.alignment: Qt.AlignCenter
-            text: "/etc/skel-folder"
+            text: qsTr("/etc/skel-folder")
             font.capitalization: Font.MixedCase
             font.weight: Font.Medium
             font.wordSpacing: 4
@@ -37,7 +37,7 @@ Item {
         Label {
             width: 357
             Layout.alignment: Qt.AlignCenter
-            text: "The /etc/skel-folder contains files/folders, which will be copied to every new user's home-folder when creating the account. It can be used to store standard configuration-files."
+            text: qsTr("The /etc/skel-folder contains files/folders, which will be copied to every new user's home-folder when creating the account. It can be used to store standard configuration-files.")
             Layout.fillWidth: true
             font.capitalization: Font.MixedCase
             font.weight: Font.Medium
@@ -56,8 +56,8 @@ Item {
 
             RadioButton {
                 id: radioempty
-                text: "Keep /etc/skel empty
-            (no personal settings)."
+                text: qsTr("Keep /etc/skel empty
+            (no personal settings).")
                 Layout.fillWidth: true
                 font.capitalization: Font.MixedCase
                 font.weight: Font.Medium
@@ -73,8 +73,8 @@ Item {
 
             RadioButton {
                 id: radiocustom
-                text: "Use a custom /etc/skel-folder
-            (with personal settings)."
+                text: qsTr("Use a custom /etc/skel-folder
+            (with personal settings).")
                 Layout.fillWidth: true
                 font.capitalization: Font.MixedCase
                 font.weight: Font.Medium
@@ -88,7 +88,7 @@ Item {
 
                 Label {
                     id: skelfolderselection
-                    text: "No folder selected."
+                    text: qsTr("No folder selected.")
                     horizontalAlignment: Text.AlignHCenter
                     Layout.fillWidth: true
                     width: parent.width
@@ -99,7 +99,7 @@ Item {
                 }
                 Button {
                     id: selectfolderbtn
-                    text: "Pick a folder."
+                    text: qsTr("Pick a folder.")
                     Layout.fillWidth: true
                     Layout.minimumWidth: 250
                     Layout.minimumHeight: 45
@@ -111,9 +111,9 @@ Item {
 
             RadioButton {
                 id: radiohome
-                text: "Use my home-folder
+                text: qsTr("Use my home-folder
             (only the configuration files will
-                be copied)."
+                be copied).")
                 Layout.fillWidth: true
                 font.capitalization: Font.MixedCase
                 font.weight: Font.Medium
@@ -128,7 +128,7 @@ Item {
     FileDialog {
         selectFolder: true
         id: skelopendialog
-        title: "Please select an /etc/skel-folder"
+        title: qsTr("Please select an /etc/skel-folder")
         folder: shortcuts.home
     }
 }

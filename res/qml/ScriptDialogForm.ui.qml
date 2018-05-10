@@ -30,7 +30,7 @@ Dialog {
             Layout.fillWidth: true
             Label {
                 Layout.alignment: Qt.AlignCenter
-                text: "The script has been generated successfully! :)"
+                text: qsTr("The script has been generated successfully! :)")
                 wrapMode: Text.WordWrap
                 font.capitalization: Font.MixedCase
                 font.weight: Font.Medium
@@ -43,7 +43,7 @@ Dialog {
             Label {
                 width: 357
                 Layout.alignment: Qt.AlignCenter
-                text: "The generation-script for your distribution has been generated successfully. Now you can save it to run it later in a terminal or you can run it now."
+                text: qsTr("The generation-script for your distribution has been generated successfully. Now you can save it to run it later in a terminal or you can run it now.")
                 Layout.fillWidth: true
                 font.capitalization: Font.MixedCase
                 font.weight: Font.Medium
@@ -54,7 +54,7 @@ Dialog {
 
             Button {
                 id: backbtn
-                text: "Back"
+                text: qsTr("Back")
                 font.pointSize: 11
                 Layout.minimumWidth: 80
                 Layout.maximumWidth: 80
@@ -68,7 +68,7 @@ Dialog {
                 anchors.horizontalCenter: parent.horizontalCenter
                 Button {
                     id: savebtn
-                    text: "Save"
+                    text: qsTr("Save")
                     font.pointSize: 11
                     Layout.minimumWidth: 80
                     Layout.maximumWidth: 80
@@ -78,7 +78,7 @@ Dialog {
 
                 Button {
                     id: runbtn
-                    text: "Run"
+                    text: qsTr("Run")
                     font.pointSize: 11
                     Layout.minimumWidth: 80
                     Layout.maximumWidth: 80
@@ -89,7 +89,7 @@ Dialog {
 
                 Button {
                     id: closebtn
-                    text: "Close"
+                    text: qsTr("Close")
                     font.pointSize: 11
                     Layout.minimumWidth: 80
                     Layout.maximumWidth: 80
@@ -102,7 +102,7 @@ Dialog {
     FileDialog {
         selectFolder: true
         id: savefolderdialog
-        title: "Please select a build-folder for your distro"
+        title: qsTr("Please select a build-folder for your distro")
         folder: shortcuts.home
     }
 }

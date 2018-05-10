@@ -16,7 +16,7 @@ Dialog {
     ListModel {
         id: searchresults
         ListElement {
-            name: "No search results."
+            name: qsTr("No search results.")
             pkgid: -1
             url: "none"
             description: ""
@@ -25,7 +25,7 @@ Dialog {
     implicitWidth: parent.width
     implicitHeight: parent.height
 
-    title: "Select an AUR package"
+    title: qsTr("Select an AUR package")
 
     contentItem: Rectangle {
         color: "#2d2d2d"
@@ -107,14 +107,14 @@ Dialog {
                         id: selectpkg
                         Layout.minimumHeight: 45
                         Layout.maximumHeight: 45
-                        text: "Add"
+                        text: qsTr("Add")
                         font.pointSize: 10
                         font.family: "Verdana"
                     }
 
                     TextField {
                         id: searchinput
-                        placeholderText: "Search"
+                        placeholderText: qsTr("Search")
                         Layout.fillWidth: true
                         Layout.fillHeight: true
                     }
@@ -123,7 +123,7 @@ Dialog {
                         id: searchpkg
                         Layout.minimumHeight: 45
                         Layout.maximumHeight: 45
-                        text: "Search"
+                        text: qsTr("Search")
                         font.pointSize: 10
                         font.family: "Verdana"
                     }

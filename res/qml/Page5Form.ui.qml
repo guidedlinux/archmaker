@@ -34,7 +34,7 @@ Item {
         Label {
             width: 357
             Layout.alignment: Qt.AlignCenter
-            text: "The file \"/etc/lsb-release\" contains information about the distribution. The selected name will also be used for dual-boot-entries."
+            text: qsTr("The file \"/etc/lsb-release\" contains information about the distribution. The selected name will also be used for dual-boot-entries.")
             Layout.fillWidth: true
             font.capitalization: Font.MixedCase
             font.weight: Font.Medium
@@ -52,7 +52,7 @@ Item {
             spacing: 15
 
             Label {
-                text: "Name of the distribution:"
+                text: qsTr("Name of the distribution:")
                 font.capitalization: Font.MixedCase
                 font.weight: Font.Medium
                 font.pointSize: 11
@@ -61,13 +61,13 @@ Item {
 
             TextField {
                 id: distroname
-                text: "mydistro"
+                text: qsTr("mydistro")
                 width: 250
-                placeholderText: "mydistro"
+                placeholderText: qsTr("mydistro")
             }
 
             Label {
-                text: "Description:"
+                text: qsTr("Description:")
                 font.capitalization: Font.MixedCase
                 font.weight: Font.Medium
                 font.pointSize: 11
@@ -76,13 +76,13 @@ Item {
 
             TextField {
                 id: distrodescription
-                text: "The best distro ever!"
+                text: qsTr("The best distro ever!")
                 width: 250
-                placeholderText: "The best distro ever!"
+                placeholderText: qsTr("The best distro ever!")
             }
 
             Label {
-                text: "First version:"
+                text: qsTr("First version:")
                 font.capitalization: Font.MixedCase
                 font.weight: Font.Medium
                 font.pointSize: 11
@@ -97,7 +97,7 @@ Item {
             }
 
             Label {
-                text: "First codename:"
+                text: qsTr("First codename:")
                 font.capitalization: Font.MixedCase
                 font.weight: Font.Medium
                 font.pointSize: 11
