@@ -13,7 +13,7 @@ public slots:
     bool launchterminal(const QString& scriptpath, const QString& workingdir) {
         QString launchcmd = "";
         if (std::ifstream("/usr/bin/xterm"))
-            launchcmd = "/usr/bin/xterm -e \"cd '" + workingdir + "' && " + scriptpath + "\"";
+            launchcmd = "/usr/bin/xterm -e \"cd '" + workingdir + "' && " + scriptpath + " 2>&1 | tee log\"";
         else {
             std::cout << "Cannot execute xterm!" << std::endl;
             return false;
